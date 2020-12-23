@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="action_large_file_load" model="ir.actions.client">
+            <field name="name">Update Product Image</field>
+            <field name="tag">large_file_load_view</field>
+            <field name="target">new</field>
+        </record>
+
+    </data>
+</odoo>
