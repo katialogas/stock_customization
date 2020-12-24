@@ -42,7 +42,7 @@ class LargeFileController(http.Controller):
         finally:
             # if data_file:
             #     os.unlink(large_file.stream.name)
-            return _("The agip padron was loaded correctly. You only need to wait for the aliquots to be updated.")
+            return _("The update imagen product was loaded correctly. You only need to wait for the imagen to be updated.")
 
 
 

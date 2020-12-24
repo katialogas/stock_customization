@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <template id="assets_backend" name="load_file_agip assets" inherit_id="web.assets_backend">
+        <template id="assets_backend" name="load_file_image_product assets" inherit_id="web.assets_backend">
             <xpath expr="." position="inside">
-                <script type="text/javascript" src="/load_file_agip/static/src/js/load_file_agip.js"></script>
+                <script type="text/javascript" src="/load_file_image_product/static/src/js/load_file_image.js"></script>
             </xpath>
         </template>
     </data>

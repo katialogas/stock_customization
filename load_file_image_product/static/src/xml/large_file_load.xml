@@ -10,7 +10,6 @@
                 <label for="large_file" class="col-form-label">Load File</label>
                 <input id="large_file" type="file" name="large_file" class="o_input_file"/>
             </div>
-
             <div class="form-group">
                 <p class="form-text">
                     Please upload the file in csv format with the product images you want to import into the system.
@@ -18,7 +17,7 @@
             </div>
         </div>
         <div class="modal-footer">
-            <input id="continuing" type="button" value="Continuar" class="btn btn-primary float-right"/>
+            <input id="continuing" type="button" value="Continue" class="btn btn-primary float-right"/>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close" tabindex="-1"/>
         </div>
     </form>

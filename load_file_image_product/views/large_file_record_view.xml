@@ -5,7 +5,7 @@
             <field name="name">Update Product Image</field>
             <field name="tag">large_file_load_view</field>
             <field name="target">new</field>
+            <field name="context">{'type' : 'template'}</field>
         </record>
-
     </data>
 </odoo>

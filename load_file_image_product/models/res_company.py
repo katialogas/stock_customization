@@ -20,7 +20,7 @@ class ResCompany(models.Model):
     _inherit = "res.company"
 
     def importImage(self, save_path):
-        PRODUCT = self.env['product.template']
+        PRODUCT = self.env['product.product']
         with open(save_path) as csvfile:
             readCSV = csv.reader(csvfile, delimiter=',')
             count = 0
@@ -28,12 +28,12 @@ class ResCompany(models.Model):
                 if readCSV.line_num != 1:
                     print('Importing: ', row[1])
                     try:
-                        external_ids = self.env['ir.model.data'].sudo().search([('model', '=', 'product.template')], order='id')
+                        external_ids = self.env['ir.model.data'].sudo().search([('model', '=', 'product.product')], order='id')
                         if external_ids:
-                            external_id = external_ids.filtered(lambda x: x.complete_name == row[1])
+                            external_id = external_ids.filtered(lambda x: x.complete_name == row[0])
                             if external_id:
                                 PRODUCT.search([('id', '=', external_id.res_id)]).write({
-                                    'image_1920': row[2]
+                                    'image_1920': row[1]
                                 })
                                 if count % 2 == 0:
                                     PRODUCT._cr.commit()
