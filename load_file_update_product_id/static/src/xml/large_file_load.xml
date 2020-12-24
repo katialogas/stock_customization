@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates xml:space="preserve">
+
+<div t-name="large_file_id_template" class="o_reconciliation">
+
+    <form id="form_large_id_file_load" role="form" action="/large_id/file/upload_id" method="post" enctype="multipart/form-data">
+        <div class="modal-body">
+            <div class="form-group">
+                <label for="large_file" class="col-form-label">Load File</label>
+                <input id="large_file" type="file" name="large_file" class="o_input_file"/>
+            </div>
+            <div class="form-group">
+                <p class="form-text">
+                    Please upload the file in csv format with the product images you want to import into the system.
+                </p>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <input id="continuing_id" type="button" value="Continue" class="btn btn-primary float-right"/>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" tabindex="-1"/>
+        </div>
+    </form>
+
+</div>
+
+</templates>

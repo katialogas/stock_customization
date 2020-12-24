@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Top menu item -->
+        <menuitem name="Update Product External ID"
+            id="menu_update_product_ext_id_file"
+            web_icon="account,static/description/icon.png"
+            parent="stock.menu_product_in_config_stock"
+            sequence="100"
+            action="load_file_update_product_id.action_large_file_ext_id_load"/>
+
+    </data>
+</odoo>
+

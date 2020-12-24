@@ -20,7 +20,6 @@ class ResCompany(models.Model):
     _inherit = "res.company"
 
     def importImage(self, save_path):
-        PRODUCT = self.env['product.template']
         with open(save_path) as csvfile:
             readCSV = csv.reader(csvfile, delimiter=',')
             count = 0
@@ -28,7 +27,16 @@ class ResCompany(models.Model):
                 if readCSV.line_num != 1:
                     print('Importing: ', row[1])
                     try:
-                        external_ids = self.env['ir.model.data'].sudo().search([('model', '=', 'product.template')], order='id')
+                        if len(row[0].split('.')) > 1:
+                            models = row[0].split('.')[1]
+                        else:
+                            models = row[0]
+                        if 'product_product' in models:
+                            PRODUCT = self.env['product.product']
+                            external_ids = self.env['ir.model.data'].sudo().search([('model', '=', 'product.product')], order='id')
+                        else:
+                            PRODUCT = self.env['product.template']
+                            external_ids = self.env['ir.model.data'].sudo().search([('model', '=', 'product.template')], order='id')
                         if external_ids:
                             external_id = external_ids.filtered(lambda x: x.complete_name == row[0])
                             if external_id:
@@ -37,8 +45,6 @@ class ResCompany(models.Model):
                                 })
                                 if count % 2 == 0:
                                     PRODUCT._cr.commit()
-                        # PRODUCT.search([]).get_external_id().items()
-                        # PRODUCT.search([])._get_external_ids().items()
                     except:
                         pass
 
